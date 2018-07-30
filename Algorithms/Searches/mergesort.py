@@ -12,12 +12,14 @@ def mergesort(list):
     returns:
         sorted list """
     result = []
-    # Since we are talking about a tiny list, we'll simply use sorted
+    # Since we are talking about a tiny list, we'll simply use sorted which
+    # will be faster
     if len(list) < 20:
         return sorted(list)
     mid = int(len(list) / 2)
-    left = mergesort(list[:mid])
-    right = mergesort(list[mid:])
+    left = mergesort(list[:mid])  # Splitting the array in half
+    right = mergesort(list[mid:])  # continuusly until we are left with
+    # subarrays of length 1
     i = 0
     j = 0
     while i < len(left) and j < len(right):
@@ -45,10 +47,10 @@ def main(list):
 def random_list():
     """Random List generator
     Returns:
-        List with len of 50 including random ints between 0 and 500"""
+        List with len of 500 including random ints between 0 and 500"""
     random_list = []
-    for i in range(50):
-        random_list.append(randint(0, 500))
+    for i in range(500):
+        random_list.append(randint(0, 3000))
     return random_list
 
 
