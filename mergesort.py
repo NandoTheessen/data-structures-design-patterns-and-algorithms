@@ -24,5 +24,6 @@ def main(array):
     """
     mergesort_helper(array)
 
+
 if __name__ == '__main__':
     main(sys.argv[1])
