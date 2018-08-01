@@ -30,8 +30,6 @@ def mergesort(list):
             result.append(left[i])
             i += 1
 
-    result += left[i:]  # adds the last straggler from either the right or the
-    result += right[j:]  # left list to the results list
     return result
 
 
