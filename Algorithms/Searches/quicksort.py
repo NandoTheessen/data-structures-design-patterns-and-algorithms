@@ -2,19 +2,18 @@ from sys import argv
 from random import randint
 
 def quicksort(nums):
-    if len(nums) < 2:
+    if len(nums) <= 1:
         return nums
-    
-    pivot = nums[-1]
-    left = []
-    right = []
-    for num in nums:
-        if num < pivot:
-            left.append(num)
-        else:
-            right.append(num)
-
-    return quicksort(left), pivot, quicksort(right)
+    else:
+        pivot = nums[-1]
+        left = []
+        right = []
+        for x in range(0, len(nums)-1):
+            if nums[x] < pivot:
+                left.append(nums[x])
+            else:
+                right.append(nums[x])
+        return quicksort(left) + [pivot] + quicksort(right)
 
 
 def main(list):
@@ -23,7 +22,6 @@ def main(list):
     Args:
         list given by the user
     """
-    print(list)
     print(quicksort(list))
 
 def random_list():
