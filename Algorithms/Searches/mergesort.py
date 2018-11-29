@@ -45,7 +45,7 @@ def main(list):
 def random_list():
     """Random List generator
     Returns:
-        List with len of 500 including random ints between 0 and 500"""
+        List with len of 500 including random ints between 0 and 3000"""
     random_list = []
     for i in range(500):
         random_list.append(randint(0, 3000))
