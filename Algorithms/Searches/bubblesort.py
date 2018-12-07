@@ -1,15 +1,17 @@
 from sys import argv
 from random import randint
 
+
 def bubblesort(nums):
     while True:
         changed = False
-        for x in range(0, len(nums) -1):
+        for x in range(0, len(nums) - 1):
             if nums[x] > nums[x+1]:
                 nums[x], nums[x+1] = nums[x+1], nums[x]
                 changed = True
         if not changed:
             return nums
+
 
 def main(list):
     """executes all functions in this script
@@ -19,6 +21,7 @@ def main(list):
     """
     print(bubblesort(list))
 
+
 def random_list():
     """Random List generator
     Returns:
@@ -27,6 +30,7 @@ def random_list():
     for i in range(500):
         random_list.append(randint(0, 3000))
     return random_list
+
 
 if __name__ == '__main__':
     list = list(map(int, argv[1].split(','))) if len(

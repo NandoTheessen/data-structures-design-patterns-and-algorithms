@@ -1,6 +1,7 @@
 from sys import argv
 from random import randint
 
+
 def quicksort(nums):
     if len(nums) <= 1:
         return nums
@@ -24,6 +25,7 @@ def main(list):
     """
     print(quicksort(list))
 
+
 def random_list():
     """Random List generator
     Returns:
@@ -32,6 +34,7 @@ def random_list():
     for i in range(500):
         random_list.append(randint(0, 3000))
     return random_list
+
 
 if __name__ == '__main__':
     list = list(map(int, argv[1].split(','))) if len(
