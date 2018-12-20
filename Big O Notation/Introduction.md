@@ -7,6 +7,8 @@
 **Big O**:
 
 - describes the increase in time complexity compared to the input
+  - because of this, constants are dropped!
+  - non-dominant terms are dropped as well
 - worst case time complexity
 - describes the upper bound for runtime
 
@@ -41,3 +43,11 @@ function sum(n) {
 ```
 
 To traverse the whole range of n, _n_ in time and space complexity is needed
+
+#### When to add or mulitply runtimes:
+
+Suppose a two step algorithm, when do we multiply / add the runtimes??
+
+- When doing consecutive work we add (f.e. 2 for loops that run after each other)
+
+- When doing parallel work, we multiply (f.e. nested for loops iterating over 2 diff arrays)
