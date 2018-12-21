@@ -2,7 +2,7 @@ class Tree {
   constructor(root) {
     this.root = root;
   }
-  bfs = value => {
+  bfs(value) {
     const queue = [this.root];
     while (queue) {
       const current = queue.shift();
@@ -11,19 +11,43 @@ class Tree {
       if (current.right) queue.push(current.right);
     }
     return false;
-  };
+  }
 
-  dfs = value => {
-    const stack = [];
-    stack.push(this.root);
+  dfs(value) {
+    const stack = [this.root];
+
     while (stack) {
       const current = stack.pop();
       if (current.value === value) return current;
-      if (current.left) stack.push(current.left);
-      if (current.right) stack.push(current.right);
+      if (value >= current.value && current.right) {
+        stack.push(current.right);
+      } else if (value < current.value && current.left) {
+        stack.push(current.left);
+      }
     }
     return false;
-  };
+  }
+
+  insert(node) {
+    let current = this.root;
+    while (current) {
+      if (node.value >= current.value) {
+        if (!current.right) {
+          current.right = node;
+          return;
+        } else {
+          current = current.right;
+        }
+      } else {
+        if (!current.left) {
+          current.left = node;
+          return;
+        } else {
+          current = current.left;
+        }
+      }
+    }
+  }
 }
 
 class Node {
@@ -33,3 +57,11 @@ class Node {
     this.right = right;
   }
 }
+
+const bst = new Tree(new Node(1));
+bst.insert(new Node(2));
+bst.insert(new Node(0));
+bst.insert(new Node(3));
+bst.insert(new Node(4));
+
+console.log(bst.dfs(3));
