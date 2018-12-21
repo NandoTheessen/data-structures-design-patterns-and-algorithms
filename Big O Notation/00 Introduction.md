@@ -51,3 +51,17 @@ Suppose a two step algorithm, when do we multiply / add the runtimes??
 - When doing consecutive work we add (f.e. 2 for loops that run after each other)
 
 - When doing parallel work, we multiply (f.e. nested for loops iterating over 2 diff arrays)
+
+## More complicated examples:
+
+- Suppose an algorithm that takes in an array of strings, sorts the strings & then sorts the array.
+
+  - to avoid confusion it's important to work with different variable names!!
+  - give s to the longest string (worst case) & a to the length of the array
+
+  - Sort every string work out to be O(a\*s log s), sorting the array takes another a log a
+
+    - catch 22: for sorting an array of strings, we have to compare the strings!!
+      - runtime is O(a\*s log a)
+
+  - **this works out to be O(a\*s(log a + log s))**
