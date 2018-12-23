@@ -67,7 +67,6 @@ Suppose a two step algorithm, when do we multiply / add the runtimes??
   - **this works out to be O(a\*s(log a + log s))**
 
 - **General rules**
-  - algorithms with multiple recursive calls have exponential runtime!
-    - to an extend of O(branches \*\* depth) where branches are the number of simulteanous recursive calls
-      and depth == N
-    - For O(2\*\*n) we can use memoization to reach O(n) runtime!
+  - algorithms with multiple recursive calls have exponential runtime! - to an extend of O(branches \*\* depth) where branches are the number of simulteanous recursive calls
+    and depth == N - For O(2\*\*n) we can use memoization to reach O(n) runtime!
+    xx
