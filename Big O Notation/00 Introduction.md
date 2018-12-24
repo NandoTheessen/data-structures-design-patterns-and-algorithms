@@ -62,7 +62,7 @@ Suppose a two step algorithm, when do we multiply / add the runtimes??
   - Sort every string work out to be O(a\*s log s), sorting the array takes another a log a
 
     - catch 22: for sorting an array of strings, we have to compare the strings!!
-      - runtime is O(a\*s log a)
+      - runtime is O(a\*s log a) x
 
   - **this works out to be O(a\*s(log a + log s))**
 
